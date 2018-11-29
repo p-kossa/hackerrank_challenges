@@ -1,10 +1,18 @@
 #!/usr/bin/python3
 
 
-def is_leapyear(year: int) -> None:
-    if year % 4 == 0:
-        pass
+def is_leapyear(y: int) -> None:
+    if y % 4 == 0:
+        if y % 100 == 0:
+            if y % 400 == 0:
+                return True
+            else:
+                return False
+        else:
+            return True
+    else:
+        return False
 
 
-year = int(input())
-print(is_leapyear(year))
+y = int(input())
+print(is_leapyear(y))
