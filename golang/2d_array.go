@@ -1,3 +1,5 @@
+// 2d array Hackerrank challenge
+
 package main
 
 import (
