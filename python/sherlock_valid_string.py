@@ -1,24 +1,30 @@
 #!/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
 
+def isValid(s) -> str:
+    freq = dict()
+    
+    for i in s:
+        if i in freq:
+            freq[i] += 1
+        else:
+            freq[i] = 1
 
-# Complete the isValid function below.
-def isValid(s):
-    pass
+    count = int()
+
+    for k, v in freq.items():
+        if v > 2:
+            return("NO")
+        if v == 2:
+            count += 1
+            if count > 1:
+                return("NO")
+    
+    return("YES")
 
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
     s = input()
 
     result = isValid(s)
-
-    fptr.write(result + '\n')
-
-    fptr.close()
+    print(result)
